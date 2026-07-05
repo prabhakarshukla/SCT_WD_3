@@ -4,6 +4,20 @@
     box-sizing: border-box;
 }
 
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: rgb(150, 224, 246);
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -24,7 +38,28 @@ h1 {
 }
 
 .game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 8px;
     margin-bottom: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+
+    background-color: white;
+
+    border: 2px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 40px;
+    font-weight: bold;
+
+    cursor: pointer;
 }
 
 button {
