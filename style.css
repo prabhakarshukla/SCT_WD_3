@@ -20,7 +20,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #667eea, #764ba2);
 
     display: flex;
     justify-content: center;
@@ -31,10 +31,15 @@ body {
 
 .container {
     text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
     margin-bottom: 20px;
+    color: #333;
 }
 
 .game-board {
@@ -48,22 +53,42 @@ h1 {
     width: 100px;
     height: 100px;
 
-    background-color: white;
+    background: white;
 
-    border: 2px solid black;
+    border-radius: 10px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-size: 40px;
+    font-size: 42px;
     font-weight: bold;
 
     cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+    transition: 0.3s;
+}
+
+.cell:hover {
+    background-color: #e6e6e6;
+    transform: scale(1.05);
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 16px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #667eea;
+
+    color: white;
+
     cursor: pointer;
+
+    transition: 0.3s;
 }
