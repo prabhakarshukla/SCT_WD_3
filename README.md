@@ -3,6 +3,9 @@
 
 A modern and responsive **Tic Tac Toe** game built using **HTML, CSS, and JavaScript** as part of my **SkillCraft Technology Web Development Internship – Task 03**.
 
+## deployed link 
+https://game-mu-wheat-22.vercel.app/
+
 ##  Features
 
 *  Two Player Mode
