@@ -6,6 +6,9 @@ for (let i = 0; i < 9; i++) {
     cell.classList.add("cell");
 
     cell.addEventListener("click", function () {
+    if (cell.textContent !== "") {
+    return;
+}
     cell.textContent = currentPlayer;
     if (currentPlayer === "X") {
        currentPlayer = "O";
@@ -15,4 +18,11 @@ for (let i = 0; i < 9; i++) {
 });
     gameBoard.appendChild(cell);
 
+}
+
+function checkWinner() {
+
+    const cells = document.querySelectorAll(".cell");
+
+    console.log(cells);
 }
