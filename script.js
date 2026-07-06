@@ -17,36 +17,29 @@ for (let i = 0; i < 9; i++) {
 
     cell.addEventListener("click", function () {
 
-    // Agar game khatam ho gaya ho
     if (gameOver) {
         return;
     }
 
-    // Agar cell pehle se filled hai
     if (cell.textContent !== "") {
         return;
     }
 
-    // Current player ka symbol lagao
     cell.textContent = currentPlayer;
 
-    // Winner ya draw check karo
     checkWinner();
 
-    // Agar game abhi bhi chal raha hai
+
     if (!gameOver) {
 
-        // Player change karo
         if (currentPlayer === "X") {
             currentPlayer = "O";
         } else {
             currentPlayer = "X";
         }
 
-        // Status update karo
         status.textContent = "Current Turn: " + currentPlayer;
 
-        // Agar Bot Mode hai aur O ki turn hai
         if (isBotMode && currentPlayer === "O") {
             botMove();
         }
