@@ -46,6 +46,9 @@ git clone <repository-url>
 No additional setup or dependencies are required.
 
 ##  Preview
+<img width="1915" height="881" alt="image" src="https://github.com/user-attachments/assets/06bab890-ef18-49d3-a92f-e12faa5d9cb7" />
+after winning 
+<img width="1918" height="916" alt="image" src="https://github.com/user-attachments/assets/2ad531f6-309b-40a5-8137-df9f10570f87" />
 
 
 
