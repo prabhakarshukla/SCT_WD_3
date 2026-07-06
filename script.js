@@ -1,5 +1,6 @@
 const gameBoard = document.querySelector(".game-board");
 const restartBtn = document.querySelector("#restartBtn");
+const status = document.querySelector("#status");
 let currentPlayer = "X";
 let gameOver = false;
 for (let i = 0; i < 9; i++) {
@@ -15,11 +16,19 @@ for (let i = 0; i < 9; i++) {
     return;
 }
     cell.textContent = currentPlayer;
-    if (currentPlayer === "X") {
-       currentPlayer = "O";
-    } else {
-        currentPlayer = "X";
-    }
+   if (currentPlayer === "X") {
+
+    currentPlayer = "O";
+
+} else {
+
+    currentPlayer = "X";
+
+}
+
+status.textContent = "Current Turn: " + currentPlayer;
+
+checkWinner();
 });
     gameBoard.appendChild(cell);
 
@@ -52,8 +61,10 @@ for (const combination of winningCombinations) {
     cellA === cellB &&
     cellB === cellC
 ) {
-    gameOver = true;
-    alert(cellA + " Wins!");
+   gameOver = true;
+
+    status.textContent = "🎉 " + cellA + " Wins!";
+
     return;
 }
 }
@@ -72,7 +83,7 @@ if (isDraw) {
 
     gameOver = true;
 
-    alert("It's a Draw!");
+    status.textContent = "🤝 It's a Draw!";
 
 }
 }
@@ -89,5 +100,6 @@ restartBtn.addEventListener("click", function () {
     currentPlayer = "X";
 
     gameOver = false;
+    status.textContent = "Current Turn: X";
 
 });
