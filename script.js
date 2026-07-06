@@ -140,15 +140,17 @@ restartBtn.addEventListener("click", function () {
     const cells = document.querySelectorAll(".cell");
 
     for (const cell of cells) {
-
         cell.textContent = "";
         cell.classList.remove("winner");
-
     }
 
     currentPlayer = "X";
-
     gameOver = false;
+
+    isBotMode = false;
+
+    modeModal.style.display = "flex";
+
     status.textContent = "Current Turn: X";
 
 });
