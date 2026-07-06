@@ -109,7 +109,9 @@ if (isDraw) {
 }
 
 function botMove() {
+
     const cells = document.querySelectorAll(".cell");
+
     let emptyCells = [];
 
     cells.forEach((cell, index) => {
@@ -121,12 +123,15 @@ function botMove() {
     if (emptyCells.length === 0) return;
 
     let randomIndex = Math.floor(Math.random() * emptyCells.length);
-
     let cellIndex = emptyCells[randomIndex];
 
     setTimeout(() => {
-    cells[cellIndex].click();
-}, 500);
+
+        if (!gameOver) {
+            cells[cellIndex].click();
+        }
+
+    }, 500);
 
 }
 
