@@ -56,4 +56,22 @@ for (const combination of winningCombinations) {
     return;
 }
 }
+
+let isDraw = true;
+
+for (const cell of cells) {
+
+    if (cell.textContent === "") {
+        isDraw = false;
+    }
+
+}
+
+if (isDraw) {
+
+    gameOver = true;
+
+    alert("It's a Draw!");
+
+}
 }
