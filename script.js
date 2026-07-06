@@ -63,8 +63,6 @@ for (const combination of winningCombinations) {
 ) {
    gameOver = true;
 
-   gameOver = true;
-
 cells[a].classList.add("winner");
 cells[b].classList.add("winner");
 cells[c].classList.add("winner");
@@ -100,6 +98,7 @@ restartBtn.addEventListener("click", function () {
     for (const cell of cells) {
 
         cell.textContent = "";
+        cell.classList.remove("winner");
 
     }
 
