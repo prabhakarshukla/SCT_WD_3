@@ -103,3 +103,32 @@ button {
 .winner {
     background-color: #90EE90;
 }
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}

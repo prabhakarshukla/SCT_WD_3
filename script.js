@@ -1,34 +1,57 @@
 const gameBoard = document.querySelector(".game-board");
 const restartBtn = document.querySelector("#restartBtn");
 const status = document.querySelector("#status");
+
+const modeModal = document.querySelector("#modeModal");
+const botModeBtn = document.querySelector("#botMode");
+const twoPlayerBtn = document.querySelector("#twoPlayerMode");
+
 let currentPlayer = "X";
 let gameOver = false;
+let isBotMode = false;
+
 for (let i = 0; i < 9; i++) {
 
     const cell = document.createElement("div");
     cell.classList.add("cell");
 
     cell.addEventListener("click", function () {
+
+    // Agar game khatam ho gaya ho
     if (gameOver) {
-    return;
-}
+        return;
+    }
+
+    // Agar cell pehle se filled hai
     if (cell.textContent !== "") {
-    return;
-}
+        return;
+    }
+
+    // Current player ka symbol lagao
     cell.textContent = currentPlayer;
-   if (currentPlayer === "X") {
 
-    currentPlayer = "O";
+    // Winner ya draw check karo
+    checkWinner();
 
-} else {
+    // Agar game abhi bhi chal raha hai
+    if (!gameOver) {
 
-    currentPlayer = "X";
+        // Player change karo
+        if (currentPlayer === "X") {
+            currentPlayer = "O";
+        } else {
+            currentPlayer = "X";
+        }
 
-}
+        // Status update karo
+        status.textContent = "Current Turn: " + currentPlayer;
 
-status.textContent = "Current Turn: " + currentPlayer;
+        // Agar Bot Mode hai aur O ki turn hai
+        if (isBotMode && currentPlayer === "O") {
+            botMove();
+        }
+    }
 
-checkWinner();
 });
     gameBoard.appendChild(cell);
 
@@ -91,6 +114,29 @@ if (isDraw) {
 
 }
 }
+
+function botMove() {
+    const cells = document.querySelectorAll(".cell");
+    let emptyCells = [];
+
+    cells.forEach((cell, index) => {
+        if (cell.textContent === "") {
+            emptyCells.push(index);
+        }
+    });
+
+    if (emptyCells.length === 0) return;
+
+    let randomIndex = Math.floor(Math.random() * emptyCells.length);
+
+    let cellIndex = emptyCells[randomIndex];
+
+    setTimeout(() => {
+    cells[cellIndex].click();
+}, 500);
+
+}
+
 restartBtn.addEventListener("click", function () {
 
     const cells = document.querySelectorAll(".cell");
@@ -106,5 +152,21 @@ restartBtn.addEventListener("click", function () {
 
     gameOver = false;
     status.textContent = "Current Turn: X";
+
+});
+
+botModeBtn.addEventListener("click", function () {
+
+    isBotMode = true;
+
+    modeModal.style.display = "none";
+
+});
+
+twoPlayerBtn.addEventListener("click", function () {
+
+    isBotMode = false;
+
+    modeModal.style.display = "none";
 
 });
