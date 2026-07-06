@@ -1,4 +1,5 @@
 const gameBoard = document.querySelector(".game-board");
+const restartBtn = document.querySelector("#restartBtn");
 let currentPlayer = "X";
 let gameOver = false;
 for (let i = 0; i < 9; i++) {
@@ -75,3 +76,18 @@ if (isDraw) {
 
 }
 }
+restartBtn.addEventListener("click", function () {
+
+    const cells = document.querySelectorAll(".cell");
+
+    for (const cell of cells) {
+
+        cell.textContent = "";
+
+    }
+
+    currentPlayer = "X";
+
+    gameOver = false;
+
+});
