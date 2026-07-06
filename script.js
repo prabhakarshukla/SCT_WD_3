@@ -63,9 +63,15 @@ for (const combination of winningCombinations) {
 ) {
    gameOver = true;
 
-    status.textContent = "🎉 " + cellA + " Wins!";
+   gameOver = true;
 
-    return;
+cells[a].classList.add("winner");
+cells[b].classList.add("winner");
+cells[c].classList.add("winner");
+
+status.textContent = "🎉 " + cellA + " Wins!";
+
+return;
 }
 }
 

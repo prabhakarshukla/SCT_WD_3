@@ -99,3 +99,7 @@ button {
 
     transition: 0.3s;
 }
+
+.winner {
+    background-color: #90EE90;
+}
